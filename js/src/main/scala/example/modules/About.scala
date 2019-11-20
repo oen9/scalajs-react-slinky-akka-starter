@@ -18,11 +18,11 @@ import slinky.web.html._
             ),
             tr(
               td("github"),
-              td(a(target := "_blank", href := "https://github.com/oen9/scalajs-react-slinky-akka-starter", "https://github.com/oen9/scalajs-react-slinky-akka-starter"))
+              td(a(target := "_blank", href := "https://github.com/oen9/scalajs-slinky-akka-starter", "https://github.com/oen9/scalajs-slinky-akka-starter"))
             ),
             tr(
               td("heroku"),
-              td(a(target := "_blank", href := "https://scalajs-react-slinky-akka-starter.herokuapp.com", "https://scalajs-react-slinky-akka-starter.herokuapp.com"))
+              td(a(target := "_blank", href := "https://scalajs-slinky-akka-starter.herokuapp.com", "https://scalajs-slinky-akka-starter.herokuapp.com"))
             ),
             tr(
               td("use"),

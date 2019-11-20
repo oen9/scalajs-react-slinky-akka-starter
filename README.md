@@ -1,6 +1,5 @@
-# scalajs-react-slinky-akka-starter
-[![Build Status](https://travis-ci.org/oen9/scalajs-react-slinky-akka-starter.svg?branch=master)](https://travis-ci.org/oen9/scalajs-react-slinky-akka-starter)
-
+# scalajs-slinky-akka-starter
+[![Build Status](https://travis-ci.org/oen9/scalajs-slinky-akka-starter.svg?branch=master)](https://travis-ci.org/oen9/scalajs-slinky-akka-starter)
 # Libs
 
 ## backend
