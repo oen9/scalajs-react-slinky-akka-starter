@@ -4,23 +4,21 @@ import slinky.core.annotations.react
 import slinky.web.html._
 import slinky.core.FunctionalComponent
 import slinky.core.facade.Fragment
-import com.lambdaminute.slinkywrappers.reactrouter.RouteProps
 import com.lambdaminute.slinkywrappers.reactrouter.Link
-import com.lambdaminute.slinkywrappers.reactrouter.Route
-import example.bridges.reactrouter.com.lambdaminute.slinkywrappers.reactrouter.Switch
 import example.bridges.reactrouter.NavLink
 import example.bridges.CustomHtmlAttributes._
 import example.modules.MainRouter.Loc
+import slinky.core.facade.ReactElement
 
 @react object Layout {
-  type Props = RouteProps
+  case class Props(content: ReactElement)
 
   def nav(props: Props) =
     div(className := "navbar navbar-expand-md navbar-dark bg-dark",
       Link(to = Loc.home)(
         className := "navbar-brand",
         img(src := "front-res/img/logo-mini.png"),
-        " slinky-react-akka"
+        " slinky-akka"
       ),
       button(className := "navbar-toggler", `type` := "button", data-"toggle" := "collapse", data-"target" := "#navbarNav", aria-"controls" := "navbarNav", aria-"expanded" := "false", aria-"label" := "Toggle navigation",
         span(className := "navbar-toggler-icon")
@@ -36,12 +34,7 @@ import example.modules.MainRouter.Loc
       )
     )
 
-  def contentBody(props: Props) = Switch(
-    Route(exact = true, path = Loc.home, render = _ => Home()),
-    Route(exact = true, path = Loc.about, render = _ => About()),
-    Route(exact = true, path = Loc.page3, render = _ => DynamicPage())
-  )
-
+  def contentBody(props: Props) = props.content
 
   def footer(props: Props) =
   div(className := "footer bg-dark text-white d-flex justify-content-center mt-auto py-3",

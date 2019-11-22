@@ -8,6 +8,9 @@ import scalajs.js
 import slinky.core.facade.ReactElement
 import slinky.core.annotations.react
 import slinky.core.StatelessComponent
+import com.lambdaminute.slinkywrappers.reactrouter.Route
+import example.modules.MainRouter.Loc
+import example.bridges.reactrouter.Switch
 
 @react class MainRouter extends StatelessComponent {
   type Props = RouteProps
@@ -18,8 +21,13 @@ import slinky.core.StatelessComponent
   }
 
   def render(): ReactElement = {
+    val routerSwitch = Switch(
+      Route(exact = true, path = Loc.home, render = _ => Home()),
+      Route(exact = true, path = Loc.about, render = _ => About()),
+      Route(exact = true, path = Loc.page3, render = _ => DynamicPage())
+    )
     ReactDiode.diodeContext.Provider(AppCircuit)(
-      Layout(props)
+      Layout(routerSwitch)
     )
   }
 }
